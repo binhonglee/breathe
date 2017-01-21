@@ -1,16 +1,16 @@
 {
   "intents": [
     {
-      "intent": "RequestIntent",
+      "intent": "RequestIntent"
+    },
+    {
+      "intent": "CreateEventIntent"
+    },
+    {
+      "intent": "CreateTherapistIntent"
+    },
+    {
+      "intent": "CreateFriendIntent"
     }
-        {
-        "intent": "CreateEventIntent",
-        }
-          {
-            "intent": "CreateTherapistIntent",
-          }
-            {
-              "intent": "CreateFriendIntent",
-            }
-          ]
-        }
+  ]
+}
