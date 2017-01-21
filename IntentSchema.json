@@ -4,10 +4,13 @@
       "intent": "RequestIntent",
     }
         {
-        "intent": ""
-    },
-        {
-          "intent": "GetReminders",
-
+        "intent": "CreateEventIntent",
         }
-      
+          {
+            "intent": "CreateTherapistIntent",
+          }
+            {
+              "intent": "CreateFriendIntent",
+            }
+          ]
+        }
