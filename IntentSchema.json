@@ -4,7 +4,13 @@
       "intent": "RequestIntent"
     },
     {
-      "intent": "CreateEventIntent"
+      "intent": "CreateEventIntent",
+      "slots": [
+        {
+          "name": "Event",
+          "type": "AMAZON.US_STATE"
+        }
+      ]
     },
     {
       "intent": "CreateTherapistIntent"

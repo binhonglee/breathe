@@ -1,23 +1,13 @@
 'use strict';
 
+var events = new Array();
+
 function buildResponse(sessionAttributes, speechletResponse) {
     return {
         version: '1.0',
         sessionAttributes,
         response: speechletResponse,
     };
-}
-
-function getWelcomeResponse(callback) {
-  const sessionAttributes = {};
-  const cardTitle = 'Welcome';
-  const speechOutput = 'Welcome! ' + 'Please tell me one thing you feel good about yourself today by saying, I felt good running 2km today';
-
-  const repromptText = 'Please tell me one thing you feel good about yourself today by saying, I felt good running 2km today';
-  const shouldEndSession = false;
-
-  callback(sessionAttributes,
-    buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
 }
 
 function buildSpeechletResponse(title, output, repromptText, shouldEndSession) {
@@ -39,6 +29,64 @@ function buildSpeechletResponse(title, output, repromptText, shouldEndSession) {
     },
     shouldEndSession,
   };
+}
+
+function addNewEvent(intent, session, callback) {
+  const cardTitle = intent.name;
+  const newEventItem = intent.event.Event;
+  let repromptText = '';
+  let sessionAttributes = {};
+  const shouldEndSession = false;
+  let speechOutput = '';
+
+  if (newEventItem) {
+    const newEvent = newEventItem.value;
+    events.push(newEvent);
+    sessionAttributes = newEvent;
+    speechOutput = `I have completed recording ${newEvent} as a new event.`;
+    repromptText = "You can ask me to tell you all the recorded events by saying, remind me";
+  } else {
+    speechOutput = "I'm not sure what you are talking about. Please try again.";
+    repromptText = "I'm not sure what you are talking about. You can tell me to record an event by saying, create a new moment of feeling good running 2km today"
+  }
+
+  callback(sessionAttributes,
+    buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
+}
+
+function getEvent(intent, session, callback) {
+  var toReturnPos = Math.random(events.length);
+  let toReturn;
+  const repromptText = null;
+  const sessionAttributes = {};
+  let shouldEndSession = false;
+  let speechOutput = '';
+
+  if (events) {
+    toReturn = events[toReturnPos];
+  }
+
+  if (toReturn) {
+    speechOutput = `One of your recorded moments were that you were ${toReturn}.`;
+    shouldEndSession = true;
+  } else {
+    speechOutput = "There is no moments recorded yet. You can say, create a new moment of feeling good running 2km today"
+  }
+
+  callback(sessionAttributes,
+    buildSpeechletResponse(intent.name, speechOutput, repromptText, shouldEndSession));
+}
+
+function getWelcomeResponse(callback) {
+  const sessionAttributes = {};
+  const cardTitle = 'Welcome';
+  const speechOutput = 'Welcome! ' + 'Please tell me one thing you feel good about yourself today by saying, create a new moment of feeling good running 2km today';
+
+  const repromptText = 'Please tell me one thing you feel good about yourself today by saying, create a new moment of feeling good running 2km today';
+  const shouldEndSession = false;
+
+  callback(sessionAttributes,
+    buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
 }
 
 function onSessionStarted(sessionStartedRequest, session) {
@@ -63,9 +111,9 @@ function onIntent(intentRequest, session, callback) {
   const intentName = intentRequest.intent.name;
 
   if (intentName === 'RequestIntent') {
-
+    getEvent(intent, session, callback);
   } else if (intentName === 'CreateEventIntent') {
-
+    addNewEvent(intent, session, callback);
   } else if (intentName === 'CreateTherapistIntent') {
 
   } else if (intentName === 'CreateFriendIntent') {

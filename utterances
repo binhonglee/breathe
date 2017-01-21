@@ -1,12 +1,12 @@
-RequestIntent how am I doing 
+RequestIntent how am I doing
 RequestIntent remind me
-CreateEventIntent create a moment 
-CreateEventIntent create a memory
-CreateEventIntent record this moment
-CreateEventIntent record this memory
-CreateTherapistIntent can I add a therapist 
-CreateTherapistIntent can I add my therapist 
-CreateTherapistIntent can I add a new therapist 
-CreateFriendIntent can I add a friend 
+CreateEventIntent create a new moment of {Event}
+CreateEventIntent create a new memory of {Event}
+CreateEventIntent record this moment of {Event}
+CreateEventIntent record this memory of {Event}
+CreateTherapistIntent can I add a therapist
+CreateTherapistIntent can I add my therapist
+CreateTherapistIntent can I add a new therapist
+CreateFriendIntent can I add a friend
 CreateFriendIntent can I add my friend
 CreateFriendIntent can I add a new friend
