@@ -13,12 +13,6 @@
       ]
     },
     {
-      "intent": "CreateTherapistIntent"
-    },
-    {
-      "intent": "CreateFriendIntent"
-    },
-    {
       "intent": "StopIntent"
     }
   ]

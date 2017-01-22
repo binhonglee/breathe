@@ -1,13 +1,7 @@
-RequestIntent remind me everything
+RequestIntent tell me something
 RequestIntent remind me
 CreateEventIntent create a new moment of {Event}
 CreateEventIntent create a new memory of {Event}
 CreateEventIntent record this moment of {Event}
 CreateEventIntent record this memory of {Event}
-CreateTherapistIntent can I add a therapist
-CreateTherapistIntent can I add my therapist
-CreateTherapistIntent can I add a new therapist
-CreateFriendIntent can I add a friend
-CreateFriendIntent can I add my friend
-CreateFriendIntent can I add a new friend
 StopIntent stop
