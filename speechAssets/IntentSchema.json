@@ -1,0 +1,25 @@
+{
+  "intents": [
+    {
+      "intent": "RequestIntent"
+    },
+    {
+      "intent": "CreateEventIntent",
+      "slots": [
+        {
+          "name": "Event",
+          "type": "AMAZON.US_STATE"
+        }
+      ]
+    },
+    {
+      "intent": "CreateTherapistIntent"
+    },
+    {
+      "intent": "CreateFriendIntent"
+    },
+    {
+      "intent": "StopIntent"
+    }
+  ]
+}
