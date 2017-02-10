@@ -20,5 +20,4 @@ StopIntent stop
 | CreateEventIntent | For the users to record a new message (event) that provided them with positive reinforcement. |
 | StopIntent | To end / quit the Alexa skill. |
 
-
 ###### This project is made at [SpartansHack 17](https://17.spartahack.com/).
