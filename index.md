@@ -11,4 +11,4 @@ We need to celebrate every success in our lives, no matter how big or how small.
 
 This skill is good for EVERYONE. We need to stray away from guilt tripping and weird ideas of success and allow ourselves to celebrate us and what we are doing. People participating in rehab or physical therapy could utilize this app as well to celebrate each step of their journey. Sometimes people are told making it to the end of the journey is the only success, but every step completed is also a success, and we have to remember that.
 
-###### This project is made at [SpartansHack 17](https://17.spartahack.com/).
+#### This project is made at [SpartaHack 17](https://17.spartahack.com/).
